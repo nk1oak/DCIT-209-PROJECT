@@ -1,21 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { Routes, Route } from "react-router-dom";
+import Navbar from './Accessories/navbar';
+import Categories from './Accessories/categories';
+import Brands from './Accessories/brands';
+import Home from './Accessories/Home';
+import Contact from './Accessories/Contact';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <section id="center">
-        <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-      </section>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/brands" element={<Brands />} />
+        <Route path="/Contact" element={<Contact />} />
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
