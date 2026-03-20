@@ -13,7 +13,7 @@ export default function Navbar() {
           <img 
             src={Logo} 
             alt="Logo" 
-            className="h-15 w-15 object-cover rounded-lg"
+            className="h-12 w-12 object-cover rounded-lg"
           />
         </Link>
 
@@ -35,13 +35,17 @@ export default function Navbar() {
         <div className="flex items-center space-x-3">
           <span className="text-xl cursor-pointer">🛒</span>
 
-          <button className="text-blue-600 border border-blue-600 px-3 py-1.5 rounded-lg hover:bg-blue-50 transition">
-            Login
-          </button>
+          <Link to="/login">
+            <button className="text-blue-600 border border-blue-600 px-3 py-1.5 rounded-lg hover:bg-blue-50 transition">
+              Login
+            </button>
+          </Link>
 
-          <button className="bg-blue-600 text-white px-4 py-1.5 rounded-lg hover:bg-blue-700 transition">
-            Sign Up
-          </button>
+          <Link to="/signup">
+            <button className="bg-blue-600 text-white px-4 py-1.5 rounded-lg hover:bg-blue-700 transition">
+              Sign Up
+            </button>
+          </Link>
 
           <button 
             className="md:hidden text-2xl"
@@ -71,14 +75,19 @@ export default function Navbar() {
           </div>
 
           <div className="mt-4 flex flex-col space-y-2">
-            <button className="w-full border border-blue-600 text-blue-600 py-2 rounded-lg hover:bg-blue-50 transition">
-              Login
-            </button>
+            <Link to="/login" onClick={() => setMenuOpen(false)}>
+              <button className="w-full border border-blue-600 text-blue-600 py-2 rounded-lg">
+                Login
+              </button>
+            </Link>
 
-            <button className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
-              Sign Up
-            </button>
+            <Link to="/signup" onClick={() => setMenuOpen(false)}>
+              <button className="w-full bg-blue-600 text-white py-2 rounded-lg">
+                Sign Up
+              </button>
+            </Link>
           </div>
+
         </div>
       )}
     </nav>
