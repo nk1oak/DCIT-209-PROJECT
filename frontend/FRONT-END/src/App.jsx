@@ -1,9 +1,11 @@
 import { Routes, Route } from "react-router-dom";
-import Navbar from './Accessories/navbar';
-import Categories from './Accessories/categories';
-import Brands from './Accessories/brands';
-import Home from './Accessories/Home';
-import Contact from './Accessories/Contact';
+import Navbar from "./Accessories/Navbar";
+import Home from "./Pages/Home";
+import Categories from "./Accessories/Categories";
+import Brands from "./Accessories/Brands";
+import Login from "./Pages/Login";
+import Signup from "./Pages/Signup";
+import Contact from "./Pages/Contact";
 
 function App() {
   return (
@@ -11,10 +13,18 @@ function App() {
       <Navbar />
 
       <Routes>
+        {/* Main Pages */}
         <Route path="/" element={<Home />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/brands" element={<Brands />} />
-        <Route path="/Contact" element={<Contact />} />
+        <Route path="/contact" element={<Contact />} />
+
+        {/* Auth Pages */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+
+        {/* Optional: 404 Page */}
+        <Route path="*" element={<h1>Page Not Found</h1>} />
       </Routes>
     </>
   );
